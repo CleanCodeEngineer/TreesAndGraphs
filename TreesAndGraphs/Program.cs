@@ -162,7 +162,10 @@ namespace TreesAndGraphs
 
             int[,] processes = new int[5, 2] { { -1, -1 }, { 0, -1 }, { 0, -1 }, { 1, 2 }, { 3, -1 } };
             BuildOrderByteByByte buildOrderByteByByte = new BuildOrderByteByByte();
-            buildOrderByteByByte.BuildOrder(processes);
+            List<int> result = buildOrderByteByByte.BuildOrder(processes);
+
+            foreach(int i in result)
+                Console.WriteLine(i);
 
             Console.ReadLine();
 
