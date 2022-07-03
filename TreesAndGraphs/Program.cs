@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using static TreesAndGraphs.FasterSlowerRunner;
+using static TreesAndGraphs.MillionGazillion;
 
 namespace TreesAndGraphs
 {
@@ -121,7 +122,7 @@ namespace TreesAndGraphs
 
             //Console.ReadLine();
 
-            Console.WriteLine("Build Order:");
+            //Console.WriteLine("Build Order:");
             // projects: a, b, c, d, e, f
             // dependencies: (a, d), (f, b), (b, d), (f, a), (d, c)
             // Output: f, e, a, b, d, c
@@ -160,14 +161,14 @@ namespace TreesAndGraphs
             //     \       /
             //      - 2 <-
 
-            int[,] processes = new int[5, 2] { { -1, -1 }, { 0, -1 }, { 0, -1 }, { 1, 2 }, { 3, -1 } };
-            BuildOrderByteByByte buildOrderByteByByte = new BuildOrderByteByByte();
-            List<int> result = buildOrderByteByByte.BuildOrder(processes);
+            //int[,] processes = new int[5, 2] { { -1, -1 }, { 0, -1 }, { 0, -1 }, { 1, 2 }, { 3, -1 } };
+            //BuildOrderByteByByte buildOrderByteByByte = new BuildOrderByteByByte();
+            //List<int> result = buildOrderByteByByte.BuildOrder(processes);
 
-            foreach(int i in result)
-                Console.WriteLine(i);
+            //foreach(int i in result)
+            //    Console.WriteLine(i);
 
-            Console.ReadLine();
+            //Console.ReadLine();
 
             // Runners = { A, B, C, D, F}
             ////      ---> A ---> 
@@ -212,6 +213,15 @@ namespace TreesAndGraphs
 
             //Console.WriteLine(String.Join(", ", route));
             //Console.ReadLine();
+
+            // A trie containing "donut.net", "dogood.org", "dog.com", "dog.com/about", "dog.com/pug", and "dog.org"
+            Trie trie = new Trie();
+            bool isNew1 = trie.AddWord("donut.net");
+            bool isNew2 = trie.AddWord("dogood.org");
+            bool isNew3 = trie.AddWord("dog.com");
+            bool isNew4 = trie.AddWord("dog.com/about");
+            bool isNew5 = trie.AddWord("dog.com/pug");
+            bool isNew6 = trie.AddWord("dog.org");
         }
     }
 }
