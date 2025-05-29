@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using static TreesAndGraphs.FasterSlowerRunner;
+using static TreesAndGraphs.FasterSlowerRunner_Google;
 using static TreesAndGraphs.MillionGazillion;
 
 namespace TreesAndGraphs
