@@ -26,23 +26,25 @@ namespace TreesAndGraphs
     //               "de", {'f'}, false
     //                       \f
     //                "def", {}, true
+    // A Node class that keeps track of the current prefix ("cat", "ca", etc.), its children, and whether it marks a complete word.
+    public class Node
+    {
+        public string Prefix { get; set; }
+
+        // Hash Map<Char, Node>
+        public Dictionary<Char, Node> Children { get; set; }
+        public bool IsWord { get; set; }
+
+        public Node(string prefix)
+        {
+            Prefix = prefix;
+            Children = new Dictionary<Char, Node>();
+        }
+    }
+
     public class AutoComplete
     {
-        public class Node
-        {
-            public string Prefix { get; set; }
-
-            // Hash Map<Char, Node>
-            public Dictionary<Char, Node> Children { get; set; }
-            public Boolean IsWord { get; set; }
-
-            public Node(string prefix)
-            {
-                Prefix = prefix;
-                Children = new Dictionary<Char, Node>();
-            }
-        }
-
+        // Builds the Trie by inserting all words.
         public Node Trie { get; set; }
 
         public AutoComplete(string[] dict)
@@ -79,6 +81,7 @@ namespace TreesAndGraphs
         //        "ab", {}, true
         //
         // {"a", "ab"}
+        // Allows lookup of all words that start with a given prefix using depth-first search.
         public List<string> GetWordsForPrefix(string pre)
         {
             List<string> results = new List<string>();
